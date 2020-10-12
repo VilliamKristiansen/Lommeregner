@@ -7,7 +7,6 @@
                 var x = parseInt(document.getElementById('txt2').value);
 
                 var result;
-
                 if (operator == "+")
                 result = x + y;
                 else if (operator == "-")
@@ -27,19 +26,17 @@
 
 
     <body>
-        <input type="number" id = "txt1" />
+        <input type="txt1" id = "txt1" />
 
             <button onclick="PerformOperation('+')" > + </button>
             <button onclick="PerformOperation('-')"> - </button>
             <button onclick="PerformOperation('*')"> * </button>
             <button onclick="PerformOperation('/')"> / </button>
         
-        <input type="number" id = "txt2" />
+        <input type="txt2" id = "txt2" />
         <p> Resultatet bliver </p>
-        <input type="number" id = "result" />
+        <input type="result" id = "result" />
 
-
-        <script src="script.js"></script>
 
     </body>
 </html>
