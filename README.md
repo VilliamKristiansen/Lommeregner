@@ -20,3 +20,4 @@ så nu skal jeg til at begynde at arbejde i js. sådan at jeg kan få lommeregne
 
 09/10-2020
 
+
