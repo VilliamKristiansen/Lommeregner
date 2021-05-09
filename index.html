@@ -35,7 +35,6 @@
                var maxHeight = 0
                var minHeight = 0
                var averageHeight = 0 
-               var median = 0 
                var sum = 0 
 
                for (var height in heightArray){
@@ -49,13 +48,22 @@
                    sum += heightArray[height]
                }
 
-                
+                function median(array){
+                    array.sort((a,b)=>{
+                        return a-b 
+                    })
+                    var half = Math.floor(array.length / 2)
+                    if (array.length % 2)
+                        return array[half]
+                    else 
+                        return (array[half - 1] + array[half]) / 2
+                }
 
                average = sum / heightArray.length
                average = average.toString().substring(0,5) 
                //vi tager average og laver den om til en string, og derefter tager vi en understring der starter i 0 og slutter i 5
 
-               console.log(maxHeight,minHeight,average)
+               console.log(maxHeight,minHeight,average,median(heightArray))
             }
 
 
