@@ -21,6 +21,46 @@
                 }
                 document.getElementById('result').value = result;
             }
+
+            function performstatistic(){
+                var text = document.getElementById('statistic').value;
+               var parsed = JSON.parse(text)
+               var objectArray = parsed.objects
+               var heightArray = []
+
+               for (var person in objectArray){
+                   heightArray.push(parseInt(objectArray[person].Height))
+               }
+
+               var maxHeight = 0
+               var minHeight = 0
+               var averageHeight = 0 
+               var median = 0 
+               var sum = 0 
+
+               for (var height in heightArray){
+                   // makshøjde
+                   if (heightArray[height]>maxHeight) maxHeight = heightArray[height]
+                   // hvis minimumhøjden er = 0 så sæt den til den første værdi
+                   if (minHeight === 0) minHeight = heightArray[height]
+                   //minimunhøjde
+                   if (heightArray[height]<minHeight) minHeight = heightArray[height]
+                   //gennemsnit
+                   sum += heightArray[height]
+               }
+
+                
+
+               average = sum / heightArray.length
+               average = average.toString().substring(0,5) 
+               //vi tager average og laver den om til en string, og derefter tager vi en understring der starter i 0 og slutter i 5
+
+               console.log(maxHeight,minHeight,average)
+            }
+
+
+
+
         </script>
 
 
@@ -35,10 +75,15 @@
             <button onclick="PerformOperation('-')"> - </button>
             <button onclick="PerformOperation('*')"> * </button>
             <button onclick="PerformOperation('/')"> / </button>
+
         
         <input type="text" id = "txt2" />
         <p> Resultatet bliver </p>
         <input type="text" id = "result" />
+        <br>
+    
+        <input type="text" id="statistic">
+        <button onclick="performstatistic()"> T </button>
 
 
     </body>
