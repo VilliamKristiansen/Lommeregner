@@ -42,7 +42,7 @@
                    if (heightArray[height]>maxHeight) maxHeight = heightArray[height]
                    // hvis minimumhøjden er = 0 så sæt den til den første værdi
                    if (minHeight === 0) minHeight = heightArray[height]
-                   //minimunhøjde
+                   //minimumhøjde
                    if (heightArray[height]<minHeight) minHeight = heightArray[height]
                    //gennemsnit
                    sum += heightArray[height]
@@ -64,6 +64,10 @@
                //vi tager average og laver den om til en string, og derefter tager vi en understring der starter i 0 og slutter i 5
 
                console.log(maxHeight,minHeight,average,median(heightArray))
+               document.getElementById('min').innerHTML = minHeight
+               document.getElementById('max').innerHTML = maxHeight
+               document.getElementById('average').innerHTML = average
+               document.getElementById('median').innerHTML = median(heightArray)
             }
 
 
@@ -92,6 +96,14 @@
     
         <input type="text" id="statistic">
         <button onclick="performstatistic()"> T </button>
+        <p>min</p>
+        <p id="min">0</p>
+        <p>max</p>
+        <p id="max">0</p>
+        <p>average</p>
+        <p id="average">0</p>
+        <p>median</p>
+        <p id="median">0</p>
 
 
     </body>
